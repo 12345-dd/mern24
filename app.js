@@ -10,7 +10,7 @@ app.use(express.json())
 
 const server = http.createServer(app)
 
-mongoose.connect("mongodb://127.0.0.1:27017/chat-app").then(()=>{
+mongoose.connect("mongodb+srv://mayurpatil98607:mayur123@cluster0.kulyrnk.mongodb.net/chat-app").then(()=>{
     console.log("Database is Connected");
 }).catch((err)=>{
     console.log(err);
@@ -52,5 +52,5 @@ io.on("connection",(socket)=>{
 const PORT = 3000;
 
 server.listen(PORT,()=>{
-    console.log("server Started...")
+    console.log("server Started...",PORT)
 })
